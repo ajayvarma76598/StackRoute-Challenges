@@ -1,0 +1,16 @@
+img {
+    display: block;
+    margin-left: 90px;
+   
+
+}
+
+
+footer {
+    margin-top: 90px;
+  background-color: rgb(116, 182, 236);
+  
+    
+    width: 100%;
+    text-align: center;
+  }

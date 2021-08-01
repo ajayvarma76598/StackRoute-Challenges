@@ -1,0 +1,145 @@
+.div1{
+    border: 1px  ;
+    margin-left: 210px;
+    margin-right: 210px;
+}
+.div2{
+border: 1px solid white;
+margin-left: 210px;
+margin-right: 210px;
+padding-top: 46%;
+background-color: aliceblue;
+
+
+}
+img{
+    height:20%;
+    width:20%;
+}
+.heading{
+    position: absolute;
+    top:2%;
+    left: 30%;
+    color: white;
+}
+.heading h4{
+    font-style: normal;
+    top:70%;
+    left:12% ;
+    font-size: 15px;
+}
+
+.heading input {
+    position: absolute;
+    left: 200%;
+    top: 20%;
+    
+  }
+  .facebook{
+      position: absolute;
+      height: 20%;
+      top: 4.5%;
+      left: 73%;
+  }
+
+
+.google{
+    position: absolute;
+    height: 20%;
+    top: 4.5%;
+    left:75.4%;
+}
+  .instagram{
+    position: absolute;
+    height: 20%;
+    top: 4.5%;
+    left:76.5%;
+}
+
+.twitter{
+    position: absolute;
+    height: 21%;
+    top: 4.5%;
+    left:80.2%;
+} 
+ul {
+   
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    border: 1px solid white;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color:grey;
+  }
+
+
+.banner{
+    
+    position: absolute;
+    top:36.5%;
+    left: 16.2%;
+    }
+    .banner img{
+        width: 90.2%;
+    }
+
+    .univ{
+        position: absolute;
+        top: 88%;
+        left:17%;
+    }
+    .univ img{
+        float: left;
+        border-radius:10px ;
+        border: 1px solid black;
+    }
+
+
+
+    .univ1{
+        position: absolute;
+        top: 88%;
+        left:51%;
+    }
+  .univ1 img{
+    float: right;
+    border-radius:10px ;
+    border: 1px solid black;
+    position: absolute;
+    top: 90%;
+    left:10%;
+}
+element.style {
+    position: absolute;
+    left: 150%;
+    float: right;
+    width: 300px;
+}
+
+footer{
+    position: absolute;
+    left: 16%;
+    top: 130%;
+    width: 68%;
+    height: 5%;
+    background-color:  #333;
+    color: white;
+    text-align: center;
+     
+}

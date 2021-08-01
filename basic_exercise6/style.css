@@ -1,0 +1,204 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    display: flex;
+    padding-top: 10px;
+    height: 50px;
+    background-color: black;
+    border-bottom: 3px solid rgb(190, 23, 23);
+}
+nav span{
+    font-size: large;
+    color: white;
+}
+nav span>span{
+    color: rgb(199, 23, 23);
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 0;
+    line-height: 2;
+}
+nav li{
+    padding: 0 15px;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    font-size: small;
+}
+nav li:hover{
+    border-bottom: 3px solid  rgb(199, 23, 23);
+}
+nav ul+input{
+    height: 6vh;
+    width:22vw;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+nav input:nth-of-type(3){
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: rgb(27, 172, 27);
+    color: white;
+    border: none;
+    height: 4vh;
+    width:5vw;
+
+}
+nav ul:last-child{
+    margin-left: 28em;
+}
+nav #menubtn{
+  display: none;  
+}
+nav i{
+    color: #fff;
+}
+nav label{
+    margin-top: 5px;
+    margin: right 10px;
+}
+
+@media screen and (max-width:743px){
+    nav label{
+        visibility: visible;
+        margin-left: 200px;
+    }
+    nav input{
+        display: none;
+    }
+    nav ul{
+        text-align: center;
+        visibility: hidden;
+        display: block;
+        margin-top: 22px;
+        margin-left: -235px;
+        z-index: 1;
+    }
+    nav ul:last-child{
+        margin-top: 117px;
+        margin-left: -170px;
+    }
+    nav ul li{
+        background-color: white;
+        width: 100px;
+    }
+    nav ul li a{
+        color: black;
+    }
+    nav ul li:hover{
+        border-bottom: 0;
+        background-color: black;
+    }
+    nav ul li a:hover{
+        color: rgb(199, 23, 23);
+    }
+    .nav-bar{
+        height: 100px;
+    }
+    .nav-bar ul{
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-bar ul li{
+        margin-top: 10px;
+    }
+    .main{
+        margin-top: 250px;
+        text-align: center;
+    }
+    main section{
+        flex-direction: column;
+        align-items: center;
+    }
+    .item{
+        margin-bottom: 30px;
+    }
+}
+#menubtn:checked~ul{
+    visibility: visible;
+}
+.nav-bar{
+    height: 3em;
+}
+.nav-bar ul{
+    border-bottom: 2px solid rgb(32,32,32);
+    display: flex;
+    list-style-type: none;
+    margin-top: 14px;
+    padding-bottom: 14px;
+}
+.nav-bar ul li a{
+    text-decoration: none;
+    color: rgb(32,32,32);
+    line-height:1;
+    padding: 20px;
+}
+.nav-bar ul li:first-child a{
+    border-bottom: 3px solid rgb(199,23,23);
+    padding-bottom: 5px;
+}
+.nav-bar ul li a:hover{
+    border-bottom: 3px solid rgb(199,23,23);
+    padding-bottom: 5px;
+}
+#addCartbtn{
+    display: none;
+}
+h1{
+    margin-left: 20px;
+}
+.itemSection{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 180px;
+}
+.itemSection div.item{
+    width: 246px;
+    height: 296px;
+    margin: 10px 20px;
+    box-shadow: 0 0 3px 3px rgb(218,214,214);
+    padding-top: 10px;
+    transition: transform .2s;
+}
+.item p{
+    color: gray;
+}
+.itemSection div.item img{
+    width: 12em;
+    height: 10em;
+}
+.itemSection div.item:hover{
+    transform:scale(1.1);
+}
+.msgAddCart{
+    visibility: hidden;
+    background-color:rgb(27,172,27);
+    color: white;
+    padding: 20px 20px;
+    position: relative;
+    top: -27em;
+    left: 20em;
+    border-radius: 5px;
+}
+#addCartbtn:chcked~div{
+    visibility: visible;
+}
+.addCartAnchor{
+    background: rgb(199,23,23);
+    color:#fff;
+    padding: 13px 85px;
+}
+footer{
+    margin-top: 30px;
+    text-align: center;
+    background-color: rgb(56,50,50);
+    color: white;
+    padding: 15px 0px;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+</head>
+<body>
+  <div class="container">
+    <nav>
+        <input type="checkbox" id="checkbtn">
+        <label for="checkbtn">
+            <i id="menu" class="fas fa-bars"></i>
+            <i id="cancel" class="fas fa-times"></i>
+        </label>
+        <span>Contact Manager</span>
+        <ul>
+            <li><a href="a">Home</a></li>
+            <li><a href="a">About Us</a></li>
+            <li><a href="a">Help</a></li>
+        </ul>
+    </nav>
+  <div class="main">
+    <div class="container1">
+      <div>
+        <form>
+          <label>First Name</label>
+          <input type="text" placeholder="Name">
+          <label>Gender</label>
+          <select>
+            <option>--Select Gender--</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Others</option>
+          </select>
+          <label>Email</label>
+          <input type="text" placeholder="Email">
+          <label>Phone number</label>
+          <input type="text" placeholder="Phone Number">
+          <input type="button" value="AddContact">
+        </form>
+      </div>
+    </div>
+    <div class="container3">
+      <div>
+        <h2>Contacts(Card View)</h2>
+        <p>Hover the mouse on card to see details</p>
+      </div>
+      <div class="flex-container1">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/avatar2.png" alt="Avatar">
+              <div class="overlay">Peter parker</div>
+            </div>
+            <div class="flip-card-back">
+              <h1 class="name">Peter Parker</h1>
+              <p>Peter@gmail.com</p>
+              <p>547-165-3466</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/avatar1.png" alt="Avatar">
+              <div class="overlay">James Cameron</div>
+            </div>
+            <div class="flip-card-back">
+              <h1 class="name">James Cameron</h1>
+              <p>james@gmail.com</p>
+              <p>234-456-6790</p>
+            </div>
+          </div>
+        </div>
+​
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/avatar2.png" alt="Avatar">
+              <div class="overlay">Maria Hill</div>
+            </div>
+            <div class="flip-card-back">
+              <h1 class="name">Maria Hill</h1>
+              <p>Maria@gmail.com</p>
+              <p>344-124-3578</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/avatar3.png" alt="Avatar">
+              <div class="overlay">John Parry</div>
+            </div>
+            <div class="flip-card-back">
+              <h1 class="name">John Parry</h1>
+              <p>john@gmail.com</p>
+              <p>289-194-6789</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="style1">
+    <div>
+      <h2 style="margin-left: 50px;">Contact Table View</h2>
+    </div>
+    <table style="margin-left: 50px;">
+      <tr>
+        <th>Photo</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+      <tr style="text-align: center;">
+        <td><img src="images/avatar1.png" alt="avatar"></td>
+        <td>Peter Parker</td>
+        <td>Peter@gmail.com</td>
+        <td>547-165-3466</td>
+      </tr>
+      <tr style="text-align: center;">
+        <td><img src="images/avatar2.png" alt="avatar"></td>
+        <td>James Cameron</td>
+        <td>james@gmail.com</td>
+        <td>234-456-6790</td>
+      </tr>
+      <tr style="text-align: center;">
+        <td><img src="images/avatar3.png" alt="avatar"></td>
+        <td>Maria Hill</td>
+        <td>Maria@gmail.com</td>
+        <td>344-124-3578</td>
+      </tr>
+      <tr style="text-align: center;">
+        <td><img src="images/avatar4.jpg " alt="avatar"></td>
+        <td>John Parry</td>
+        <td>john@gmail.com</td>
+        <td>289-194-6789</td>
+      </tr>
+    </table>
+  </div>
+​
+  <footer>
+    <div>
+      <p class="style2">Copyright ContactManager@2020</p>
+    </div>
+    <div class="container5">
+      <div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non labore accusamus aut ut unde beatae saepe
+          dignissimos
+          repellendus hic ab ipsam eligendi esse voluptatibus ipsa, delectus vel perspiciatis quas quis?</p>
+      </div>
+      <div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non labore accusamus aut ut unde beatae saepe
+          dignissimos
+          repellendus hic ab ipsam eligendi esse voluptatibus ipsa, delectus vel perspiciatis quas quis.</p>
+      </div>
+      <div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non labore accusamus aut ut unde beatae saepe
+          dignissimos repellendus hic ab ipsam eligendi esse voluptatibus ipsa, delectus vel perspiciatis quas quis</p>
+      </div>
+    </div>
+  </footer>        
+</body>
+</html>

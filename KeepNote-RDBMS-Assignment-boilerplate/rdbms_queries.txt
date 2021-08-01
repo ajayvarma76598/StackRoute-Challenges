@@ -1,0 +1,186 @@
+create database rdbms;
+use rdbms;
+
+
+
+CREATE TABLE User (
+user_id VARCHAR(10) PRIMARY KEY,
+user_name VARCHAR(15) NOT NULL, 
+user_added_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+user_password VARCHAR(15) NOT NULL,
+user_mobile VARCHAR(10) NOT NULL
+);
+CREATE table Note(
+note_id int(20) auto_increment primary key,
+note_title varchar(40) not null,
+note_content varchar(20),
+note_status varchar(20) not null,
+note_creation_date timestamp not null default current_timestamp
+);
+
+create table Category(
+category_id int(20) auto_increment primary key,
+category_name varchar(30) not null,
+category_descr varchar(50),
+category_creation_date timestamp not null default current_timestamp,
+ category_creator varchar(40) not null
+);
+
+CREATE TABLE Reminder (
+reminder_id INT(30) AUTO_INCREMENT PRIMARY KEY,
+reminder_name VARCHAR(50) NOT NULL ,
+reminder_descr VARCHAR(50),
+reminder_type VARCHAR(50) NOT NULL,
+reminder_creator VARCHAR(50) NOT NULL,
+reminder_creation_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE NoteCategory (
+notecategory_id INT(30) AUTO_INCREMENT PRIMARY KEY,
+note_id INT(30) NOT NULL, 
+FOREIGN KEY note_id_fk(note_id)
+REFERENCES Note(note_id)
+ON DELETE CASCADE
+ON UPDATE CASCADE,
+category_id INT(30) NOT NULL,
+FOREIGN KEY cat_id_fk(category_id)
+REFERENCES Category(category_id)
+ON DELETE CASCADE
+ON UPDATE CASCADE   
+);
+
+create TABLE NoteReminder (
+notereminder_id INT(15) AUTO_INCREMENT PRIMARY KEY,
+note_id INT(15) NOT NULL, 
+FOREIGN KEY noterem_id_fk(note_id)
+REFERENCES Note(note_id)
+ON DELETE CASCADE
+ON UPDATE CASCADE,
+reminder_id INT(15) NOT NULL,
+FOREIGN KEY remind_id_fk(reminder_id)
+REFERENCES Reminder(reminder_id)
+ON DELETE CASCADE
+ON UPDATE CASCADE   
+);
+
+
+CREATE TABLE UserNote (
+usernote_id INT(15) AUTO_INCREMENT PRIMARY KEY,
+note_id INT(15) NOT NULL, 
+FOREIGN KEY usernote_id_fk(note_id)
+REFERENCES Note(note_id)
+ON DELETE CASCADE
+ON UPDATE CASCADE,
+user_id VARCHAR(15) NOT NULL,
+FOREIGN KEY user_id_fk(user_id)
+REFERENCES User(user_id)
+ON DELETE CASCADE
+ON UPDATE CASCADE   
+);
+   
+ insert into Note(note_title,note_content,note_status)
+ values ('Important Note','Passwords','ACTIVE');
+ insert into Note(note_title,note_content,note_status)
+ values ('Personal Data','Related to home','ACTIVE');
+ 
+select * from Note;
+insert into Category(category_name,category_descr,category_creator) 
+values ('Meeting','Meeting with Mr X at 1:00 Am','ID1-ABhi');
+
+insert into Category(category_name,category_descr,category_creator) 
+values ('Doctor','Doctor Visit at 7 Pm','ID2-Rish');
+
+select * from Category;
+
+INSERT into Reminder(reminder_name,reminder_descr,reminder_type,reminder_creator)
+ values('Meeting','Meeting at 1 AM','Meeting','ID1-ABhi');
+
+INSERT into Reminder(reminder_name,reminder_descr,reminder_type,reminder_creator)
+ values('Visit','Visit at 7 Pm','Doctor','ID2-Rish');
+select * from Reminder;
+
+
+ insert into User(user_id,user_name,user_password,user_mobile) 
+ values ('ID1-ABhi','Abhi Chauhan','Chauhan','9868XXXXX');
+
+ insert into User(user_id,user_name,user_password,user_mobile) 
+ values ('ID2-Rish','Rishabh Rajput','Rajput','9868X87XX'); 
+select * from User;
+
+insert into UserNote(note_id,user_id)
+ values(1,'ID1-Abhi');
+insert into UserNote(note_id,user_id)
+ values(2,'ID2-Rish');
+ select * from UserNote;
+ insert into NoteReminder(note_id,reminder_id) values (1,1);
+  insert into NoteReminder(note_id,reminder_id) values (2,2);
+  select * from NoteReminder;
+
+
+ insert into NoteCategory(note_id,category_id) values (1,1);
+  insert into NoteCategory(note_id,category_id) values (2,2);
+  select * from NoteCategory;
+ 
+ select * from User where user_id ='Id1-Abhi' and user_password = 'Chauhan';
+
+select * from Note order by note_creation_date asc; 
+
+select * from Category where category_creation_date >= "2021-02-01 05:34:56";
+
+	select note_id from UserNote x,User y where x.user_id = y.user_id and x.user_id='ID1-ABhi';
+
+
+update Note set note_title = 'Update in Important note',
+ note_content = ' Passwords is added' where note_id = 1;
+ 
+ select * from Note;
+
+select z.* from UserNote x, User y, Note z where x.user_id=y.user_id
+and x.note_id = z.note_id and y.user_name = 'Abhi Chauhan';
+
+select y.* from NoteCategory x, Note y, Category z where x.note_id = y.note_id 
+and z.category_id = x.category_id and z.category_name = 'Doctor';
+
+
+select z.* from Note x,NoteReminder y,Reminder z where x.note_id = y.note_id
+and y.reminder_id = z.reminder_id and x.note_id = 2;
+
+select * from Reminder where reminder_id = 2;
+
+insert into Note(note_title,note_content,note_status) 
+values('Mostly Used Notes','REVISIT PASSWORD','ACTIVE');
+select * from Note;
+INSERT INTO UserNote (note_id, user_id) SELECT note_id, 'ID1-ABhi' FROM Note WHERE note_title = 'Mostly Used Notes';
+select * from UserNote;
+
+INSERT INTO NoteCategory (note_id, category_id) SELECT 1, category_id FROM Category WHERE category_name= 'Meeting';
+select * from NoteCategory;
+
+DELETE x FROM Note x INNER JOIN UserNote y ON x.note_id = y.note_id WHERE y.user_id = 'ID1-ABhi';
+ select * from Note;
+ 
+ DELETE x FROM Note x INNER JOIN NoteCategory y ON x.note_id = y.note_id WHERE y.category_id = 1;
+select * from NoteCategory;
+
+
+
+delimiter $$
+create trigger note_delete_trigger 
+alter delete on Note 
+for each row 
+delete  from WHERE note_id = OLD.note_id;
+delete  from NoteReminder where note_id = OLD.note_id;
+delete  from NoteCategory where note_id = OLD.note_id;
+delimiter ;
+
+
+
+delimiter $$
+create trigger  user_delete_trigger 
+alter delete on User 
+for each row  
+delete x,y,z,a FROM Note x INNER JOIN UserNote y INNER JOIN NoteReminder z INNER JOIN NoteCategory a
+where x.note_id =y.note_id and y.note_id = z.note_id and y.note_id = z.note_id
+and  y.user_id = OLD.user_id;
+delimiter ;

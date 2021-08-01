@@ -1,0 +1,24 @@
+img{
+    border: 1px solid black;
+}
+h1{
+    color: grey;
+    font-size: 20pt;
+}
+h2{
+    color: green;
+    font-size: 20pt;
+}
+#img1{
+    margin-left: 100px;
+}
+#home{
+    margin-left: 350px;
+    text-decoration: none;
+}
+#about{
+    text-decoration: none;
+}
+#contact{
+    text-decoration: none;
+}
